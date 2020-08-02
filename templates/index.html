@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Women have Affair or Not</h1>
+    <div class="dropdown" style="display:inline">
+
+   <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="Age" id="Age" placeholder="Women's Age">
+            <input type="number" name="Yrs_married" id="Yrs_married" placeholder="Years of marriage">
+            <input type="number" name="children" id="children" placeholder="children's">
+
+            <select class="form-input align-center" name="Religious">
+                        <option value="none">--- Religious ---</option>
+                    <option value='Strongly Religious'>Strongly Religious</option>
+                    <option value='Average'>Average</option>
+                    <option value='Nominal'>Nominal</option>
+                    <option value='Not Religious'>Not Religious</option>
+            </select>
+            <select class="form-input align-center" name="Education">
+                        <option value="none">--- Select Women Education ---</option>
+                    <option value='Grade School'>Grade School</option>
+                    <option value='High School'>High School</option>
+                    <option value='Some College'>Some College</option>
+                    <option value='College Graduate'>College Graduate</option>
+                    <option value='Gradute School'>Gradute School</option>
+                    <option value='Advance Degree'>Advance Degree</option>
+            </select>
+            <select class="form-input align-center" name="Women_ocupation">
+                        <option value="none">--- Select Women Occupation ---</option>
+                    <option value='Professional with advance Degree'>Professional with advance Degree</option>
+                    <option value='Manager/Business'>Manager/Business</option>
+                    <option value='Teacher/Nurse/Writer'>Teacher/Nurse/Writer</option>
+                    <option value='White Collar'>White Collar</option>
+                    <option value='Farming/Unskilled/semiskilled'>Farming/Unskilled/semiskilled</option>
+                    <option value='Student'>Student</option>
+            </select>
+            </select>
+
+                <select class="form-input align-center" name="men_ocupation">
+                        <option value="none">--- Select Men Occupation ---</option>
+                    <option value='Professional with advance Degree'>Professional with advance Degree</option>
+                    <option value='Manager/Business'>Manager/Business</option>
+                    <option value='Teacher/Nurse/Writer'>Teacher/Nurse/Writer</option>
+                    <option value='White Collar'>White Collar</option>
+                    <option value='Farming/Unskilled/semiskilled'>Farming/Unskilled/semiskilled</option>
+                    <option value='Student'>Student</option>
+            </select>
+
+            <select class="form-input align-center" name="Marrige_rating">
+                        <option value="none">--- Select Marriage Rating ---</option>
+                    <option value='Very good'>Very good</option>
+                    <option value='Good'>Good</option>
+                    <option value='Average'>Average</option>
+                    <option value='Poor'>Poor</option>
+                    <option value='Very Poor'>Very Poor</option>
+            </select>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+<!-- Footer -->
+      <div class='footer'>
+
+           <p class='footer-description'>Made by Varun Kumar.</p>
+       </div>
+{% endblock %}
